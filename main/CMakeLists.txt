@@ -1,8 +1,12 @@
 set(CMAKE_CXX_STANDARD 17)
-set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-idf_component_register(
-  SRCS
-    "main.cpp"
-  INCLUDE_DIRS "."
+set(SOURCES
+  main.cpp
+)
+
+idf_component_register(SRCS ${SOURCES}
+  INCLUDE_DIRS
+    "."
+  REQUIRES
+    smooth_component
 )
